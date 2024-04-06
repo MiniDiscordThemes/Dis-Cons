@@ -1,5 +1,5 @@
 %styles {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="" fill="currentColor"/></svg>');
+  // content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="" fill="currentColor"/></svg>');
   mask-size: cover;
   background-color: currentColor;
   position: absolute;
@@ -9,11 +9,9 @@
 }
 
 @mixin nolabel($content, $svg) {
+  @include direct($svg);
   &::before {
     content: $content;
-  }
-  &::after {
-    @include direct($svg);
   }
   > [class*='label_'] {
     display: none;
