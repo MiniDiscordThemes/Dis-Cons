@@ -21,7 +21,13 @@
 }
 
 @mixin label($svg) {
-  > [class*='label_']::after {
+  > [class*='label_'] {
+    @include direct($svg);
+  }
+}
+
+@mixin labelWrapper($svg) {
+  > [class*='label_'] > [class*='labelWrapper_'] {
     @include direct($svg);
   }
 }
