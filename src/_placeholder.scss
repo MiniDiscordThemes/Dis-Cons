@@ -7,3 +7,28 @@
   width: 18px;
   height: 18px;
 }
+
+@mixin nolabel($content, $svg) {
+  &::before {
+    content: $content;
+  }
+  &::after {
+    @include direct($svg);
+  }
+  > [class*='label_'] {
+    display: none;
+  }
+}
+
+@mixin label($svg) {
+  > [class*='label_']::after {
+    @include direct($svg);
+  }
+}
+
+@mixin direct($svg) {
+  &::after {
+    @extend %styles;
+    mask: url('data:image/svg+xml;utf8,' + $svg);
+  }
+}
