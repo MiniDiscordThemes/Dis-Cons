@@ -1,0 +1,7 @@
+#user-context-favorite-channel:has([class^='caret_']),
+#channel-context-favorite-channel:has([class^='caret_']),
+#message-search-google:has([class^='caret_']) {
+  > [class*='label_']::after {
+    display: none;
+  }
+}
